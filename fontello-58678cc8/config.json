@@ -53,6 +53,12 @@
       "css": "up-big",
       "code": 59397,
       "src": "fontawesome"
+    },
+    {
+      "uid": "7f3d8ff1d5f6ee019f0c00ed7a86caec",
+      "css": "truck",
+      "code": 59398,
+      "src": "fontawesome"
     }
   ]
 }

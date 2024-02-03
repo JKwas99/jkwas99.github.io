@@ -3,6 +3,13 @@ let sidebar = document.getElementsByClassName("menu-list")
 let logo_pic = document.getElementById("menu-logo")
 let background = document.getElementsByClassName("main-box")
 let up = document.getElementsByClassName("up")
+let iconMove = document.getElementsByClassName("cursorFun")
+
+addEventListener("mousemove", (e) => {
+    mousePos = { x: e.clientX, y: e.clientY };
+    iconMove[0].style.left = `${mousePos.x+20}px`
+    iconMove[0].style.top = `${mousePos.y+15}px`
+});
 
 
 up[0].addEventListener('click', ()=>{
