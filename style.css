@@ -50,7 +50,7 @@
     transition: all .5s linear;
 }
 .callN a[href^=tel]{
-    color: #EEF5FF;
+    color: #EEF5FF!important;
     text-decoration: none;
 }
 .up{
