@@ -17,7 +17,11 @@ body{
     font-family: "Reem Kufi Fun", sans-serif;
     color: #FFF7FC;
 }
-
+.innowacje{
+    width: 100vw;
+    height: 80vh;
+    margin-top: 100px;
+}
 .icon-angle-double-down{
     display: none!important;
     position: absolute;
@@ -412,13 +416,13 @@ header>div>ul>a:hover{
         z-index: 5;
         opacity: 0;
         transition: opacity .5s linear;
-        font-size: 1.2vw;
+        font-size: 15px;
         cursor: pointer;
     }
     .inf{
         position: absolute;
         left: 50px;
-        bottom: 120px;
+        bottom: 100px;
         font-weight: 800;
         color: #FFC94A;
         z-index: 5;
@@ -427,7 +431,7 @@ header>div>ul>a:hover{
         justify-content: center;
         align-items: center;
         transition: opacity .5s linear;
-        font-size: 1.3vw;
+        font-size: 15px;
         cursor: pointer;
     }
     .if{
@@ -435,8 +439,9 @@ header>div>ul>a:hover{
     }
     .inf>div>p{
         color: #EEF5FF;
-        margin: 0px 20px;
-        font-size: 1.2vw;
+        margin: 0px 5px;
+        text-align: left;
+        font-size: 12px;
     }
     .przedVis{
         opacity: 100%;
@@ -454,7 +459,7 @@ header>div>ul>a:hover{
         height: 100%;
         transition: opacity .5s linear;
         color: #EEF5FF;
-        font-size: 1.3vw;
+        font-size: 16.5px;
         box-sizing: border-box;
         text-align: center;
         background-color: rgba(0,0,0,0.8);
@@ -656,7 +661,18 @@ header>div>ul>a:hover{
     }
 
 }
-@media (min-width:841px){
+@media(min-width:841px){
+    .innowacje>div{
+        width: 100%;
+        height: 50%;
+        text-align: center;
+    }
+    .cd{
+        font-size: 9vw;
+        text-align: left;
+        margin: 0;
+        padding: 0;
+    }
     .kierunki{
         display: flex;
         align-items: center;
