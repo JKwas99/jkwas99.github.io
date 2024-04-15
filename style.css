@@ -35,6 +35,9 @@ body{
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
+.kierunki{
+    text-align: center;
+}
 .icon-angle-double-down:hover{
     background-color: #FFC94A;
     color: #101112;

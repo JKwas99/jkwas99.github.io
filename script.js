@@ -15,6 +15,8 @@ button[0].addEventListener('click', ()=>{
     logo_pic.classList.toggle("logo-active")
 })
 
+
+
 for(let i=0;i<400;i++){
   const kropka = document.createElement('span');
   kropka.classList.add('kropka');
@@ -48,9 +50,10 @@ kropki.forEach(kropka => {
 });
 });
 
-scrollDown.addEventListener('click', ()=>{
+element.addEventListener('click', ()=>{
   document.getElementById('ab').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
+
 if(window.innerWidth>700){
   document.addEventListener("scroll",()=>{
     i=window.scrollY*0.75;
@@ -91,15 +94,27 @@ if(window.innerWidth>700){
   })
 }
 
-bef[0].addEventListener("click", ()=>{
+desc[0].addEventListener("click", ()=>{
   let desc = document.getElementsByClassName("desc")
   let inf = document.getElementsByClassName("inf")
   let przed = document.getElementsByClassName("przed")
 
+  console.log("kliknbieto")
   desc[0].classList.toggle("descVis")
   inf[0].classList.toggle("infVis")
   przed[0].classList.toggle("pzedVis")
 })
+
+desc[1].addEventListener("click", ()=>{
+  let desc = document.getElementsByClassName("desc")
+  let inf = document.getElementsByClassName("inf")
+  let przed = document.getElementsByClassName("przed")
+
+  desc[1].classList.toggle("descVis")
+  inf[1].classList.toggle("infVis")
+  przed[1].classList.toggle("pzedVis")
+})
+
 
 let text = "oznaj nas lepiej.";
 let text2 = `PROGRAMISTYCZNO-ROBOTYCZNE`
