@@ -8,6 +8,7 @@ let ab = document.querySelector(".ab")
 let bef = document.getElementsByClassName("bef")
 const anim = document.getElementsByClassName("anim")
 let desc = document.getElementsByClassName("desc")
+let mainBox = document.getElementsByClassName("main-box")
 
 button[0].addEventListener('click', ()=>{
     button[0].classList.toggle("hamburger-active")
@@ -54,7 +55,72 @@ element.addEventListener('click', ()=>{
   document.getElementById('ab').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-if(window.innerWidth>700){
+const movingDiv = document.getElementById('ab');
+let under = document.querySelector(".under")
+
+function calculateTranslateX(scrollPercent) {
+  // Domyślna pozycja X (na początku przewijania strony)
+  let translateX = 0;
+  translateX = 0 + (scrollPercent * 6); // Zmniejszamy przesunięcie w stosunku do procentu przewinięcia strony
+
+  return translateX;
+}
+
+function calculateTranslateXForSpan(scrollPercent) {
+  // Domyślna pozycja X dla span (na początku przewijania strony)
+  let translateX = 0;
+
+  // Jeśli przewinięcie strony przekracza 50%, ustawić pozycję X dla span na -100px (na lewo)
+  if (scrollPercent >= 50) {
+    translateX = -100;
+  } else {
+    // Oblicz pozycję X dla span na podstawie procentowego przewinięcia strony
+    translateX = -100 * ((50 - scrollPercent) / 50); // Zmniejszamy przesunięcie w stosunku do procentu przewinięcia strony
+  }
+
+  return translateX;
+}
+
+// Nasłuchuj zdarzenie przewijania strony
+window.addEventListener('scroll', () => {
+  // Pobierz aktualną pozycję przewijania strony w dół
+  const scrollTop = window.scrollY || window.pageYOffset;
+
+  // Oblicz procent przewinięcia strony w dół
+  const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+  // Oblicz pozycję docelową na osi X
+  const translateX = calculateTranslateX(scrollPercent);
+  const translateX2 = calculateTranslateX(scrollPercent)*(-1);
+  ab.style.opacity = `${translateX}%`
+
+  // Ustaw styl transformacji dla elementu DIV
+  movingDiv.style.transform = `translateX(${translateX}px)`;
+  let x = translateX*2
+  under.style.transform = `translateX(-${x}px)`;
+
+});
+
+/*document.addEventListener("scroll",()=>{
+  i=window.scrollY/window.clientWidth;
+  let under = document.querySelector(".under")
+  ab.style.transform = `translateX(${i}%)`;
+  let x = i*2
+  under.style.transform = `translateX(-${x}px)`;
+  if(i/10<80)
+    ab.style.opacity = `${i*5}%`
+  ab.style.setProperty('--procent', `${i}%`);
+  const scrollTop = window.scrollY;
+setTimeout(()=>{
+  anim[0].style.transform = `translateY(${scrollTop * 0.5}px)`;
+},100)
+setTimeout(()=>{
+  anim[1].style.transform = `translateY(${scrollTop * 0.5}px)`;
+},300)
+})
+
+/*if(window.innerWidth>700){
   document.addEventListener("scroll",()=>{
     i=window.scrollY*0.75;
     let under = document.querySelector(".under")
@@ -92,17 +158,17 @@ if(window.innerWidth>700){
       anim[1].style.transform = `translateY(${scrollTop * 0.35}px)`;}
   },300)
   })
-}
+}*/
 
 desc[0].addEventListener("click", ()=>{
   let desc = document.getElementsByClassName("desc")
   let inf = document.getElementsByClassName("inf")
   let przed = document.getElementsByClassName("przed")
 
-  console.log("kliknbieto")
+  console.log("kliknieto")
   desc[0].classList.toggle("descVis")
   inf[0].classList.toggle("infVis")
-  przed[0].classList.toggle("pzedVis")
+  przed[0].classList.toggle("przedVis")
 })
 
 desc[1].addEventListener("click", ()=>{

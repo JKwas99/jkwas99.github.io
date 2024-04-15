@@ -97,13 +97,16 @@ body{
     font-size: 1.2vw;
 }
 .przedVis{
-    opacity: 100%;
+    opacity: 100%!important;
+}
+.przedVis{
+    opacity: 100%!important;
 }
 .infVis{
-    opacity: 100%;
+    opacity: 100%!important;
 }
 .descVis{
-    opacity: 100%;
+    opacity: 100%!important;
 }
 .desc{
     opacity: 0%;
@@ -397,6 +400,76 @@ header>div>ul>a:hover{
 }
 }
 @media (min-width:250px) and (max-width:600px){
+    .przed{
+        white-space: pre-wrap;
+        position: absolute;
+        left: 0px;
+        text-align: center;
+        width: 100%;
+        bottom: 30px;
+        font-weight: 800;
+        color: #FFC94A;
+        z-index: 5;
+        opacity: 0;
+        transition: opacity .5s linear;
+        font-size: 1.2vw;
+        cursor: pointer;
+    }
+    .inf{
+        position: absolute;
+        left: 50px;
+        bottom: 120px;
+        font-weight: 800;
+        color: #FFC94A;
+        z-index: 5;
+        opacity: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: opacity .5s linear;
+        font-size: 1.3vw;
+        cursor: pointer;
+    }
+    .if{
+        color: #FF204E;
+    }
+    .inf>div>p{
+        color: #EEF5FF;
+        margin: 0px 20px;
+        font-size: 1.2vw;
+    }
+    .przedVis{
+        opacity: 100%;
+    }
+    .infVis{
+        opacity: 100%;
+    }
+    .descVis{
+        opacity: 100%;
+    }
+    .desc{
+        opacity: 0%;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        transition: opacity .5s linear;
+        color: #EEF5FF;
+        font-size: 1.3vw;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: rgba(0,0,0,0.8);
+        left: 0px;
+        letter-spacing: 1px;
+        z-index: 5;
+        font-family: "Kanit", sans-serif;
+        font-weight: bold;
+        margin: 0px 0px;
+        overflow-x: visible!important;
+        padding: 12% 3%;
+        position: absolute;
+        -webkit-text-stroke: width color;
+        top: 0px;
+    }
     .bef h3{
         font-size: 10vw;
     }
