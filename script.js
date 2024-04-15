@@ -9,6 +9,7 @@ let bef = document.getElementsByClassName("bef")
 const anim = document.getElementsByClassName("anim")
 let desc = document.getElementsByClassName("desc")
 let mainBox = document.getElementsByClassName("main-box")
+let aboutUs = document.getElementsByClassName("aboutUs")
 
 button[0].addEventListener('click', ()=>{
     button[0].classList.toggle("hamburger-active")
@@ -111,7 +112,21 @@ window.addEventListener('scroll', () => {
   
 
 });
+document.addEventListener("scroll",()=>{
+  const scrollTop = window.scrollY;
+  if(window.scrollY>mainBox[0].clientHeight+aboutUs[0].clientHeight-200){
+    let innowacje = document.getElementsByClassName("innowacjeInfo")
+    let innowacje2 = document.getElementsByClassName("innoText")
+    let lista = document.getElementsByClassName("innoList")
+    innowacje[0].style.transition= `all 2s linear`;
+    innowacje[0].style.opacity = `100%`;
+    innowacje2[0].style.transition= `all 1s linear`;
+    innowacje2[0].style.opacity = `100%`;
+    lista[0].style.transition= `all 1s linear`;
+    lista[0].style.opacity = `100%`;
 
+  }
+})
 
 if(window.innerWidth>700){
   document.addEventListener("scroll",()=>{
