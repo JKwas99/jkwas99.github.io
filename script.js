@@ -1,249 +1,194 @@
 let button = document.getElementsByClassName("hamburger")
 let sidebar = document.getElementsByClassName("menu-list")
 let logo_pic = document.getElementById("menu-logo")
-let element = document.querySelector('.moreAboutUs');
-let span = document.querySelector('.robotyczne');
-let scrollDown = document.querySelector(".icon-angle-double-down")
-let ab = document.querySelector(".ab")
-let bef = document.getElementsByClassName("bef")
-const anim = document.getElementsByClassName("anim")
-let desc = document.getElementsByClassName("desc")
-let mainBox = document.getElementsByClassName("main-box")
-let aboutUs = document.getElementsByClassName("aboutUs")
+let background = document.getElementsByClassName("main-box")
+let up = document.getElementsByClassName("up")
+let iconMove = document.getElementsByClassName("cursorFun")
 
+addEventListener("mousemove", (e) => {
+    mousePos = { x: e.clientX, y: e.clientY };
+    iconMove[0].style.left = `${mousePos.x+20}px`
+    iconMove[0].style.top = `${mousePos.y+15}px`
+});
+
+
+up[0].addEventListener('click', ()=>{
+    button[0].classList.remove("hamburger-active")
+    sidebar[0].classList.remove("list-active")
+    logo_pic.classList.remove("logo-active")
+})
 button[0].addEventListener('click', ()=>{
     button[0].classList.toggle("hamburger-active")
     sidebar[0].classList.toggle("list-active")
     logo_pic.classList.toggle("logo-active")
 })
 
-
-
-for(let i=0;i<400;i++){
-  const kropka = document.createElement('span');
-  kropka.classList.add('kropka');
-  if (i % 2 === 0) {
-    bef[0].appendChild(kropka);
-  }
-  else{
-    bef[1].appendChild(kropka);
-  }
-  
-}
-
-const kropki = document.querySelectorAll('.kropka');
-
-kropki.forEach(kropka => {
-  const pozycjaTop = Math.random() * bef[0].clientHeight;
-  const pozycjaLeft = Math.random() * bef[0].clientWidth;
-  const przesunieciePoziome = Math.random() * 20 - 10;
-  const przesunieciePionowe = Math.random() * 20 - 10; 
-  kropka.style.transition = "transform 2s linear";
-  kropka.style.transform = `translate(${przesunieciePoziome}px, ${przesunieciePionowe}px)`;
-  kropka.style.top = pozycjaTop + 'px';
-  kropka.style.left = pozycjaLeft + 'px';
-  kropka.addEventListener('transitionend', () => {
-  kropka.style.transform = `translate(0px, 0px)`;
-  setTimeout(() => {
-        const przesunieciePoziome = Math.random() * 20 - 10;
-        const przesunieciePionowe = Math.random() * 20 - 10;
-        kropka.style.transform = `translate(${przesunieciePoziome}px, ${przesunieciePionowe}px)`;
-    }, 100);
-});
+document.addEventListener("scroll", (event) => {
+    let box = document.getElementsByClassName("first")
+    if(window.scrollY > box[0].clientHeight){
+        up[0].classList.add("up-active");
+        up[0].addEventListener('click',()=>{
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        })
+    }
+    if(window.scrollY < box[0].clientHeight){
+        up[0].classList.remove("up-active");
+    }
 });
 
-element.addEventListener('click', ()=>{
-  document.getElementById('ab').scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
+let left = 0, timer = 0, timer2 = 0, currentPosition = 0;
 
-const movingDiv = document.getElementById('ab');
-let under = document.querySelector(".under")
+let startTime = null;
+const duration = 7000; // 7 sekund w milisekundach
 
-function calculateTranslateX(scrollPercent) {
-  // Domyślna pozycja X (na początku przewijania strony)
-  let translateX = 0;
-  translateX = 0 + (scrollPercent * 6); // Zmniejszamy przesunięcie w stosunku do procentu przewinięcia strony
-
-  return translateX;
-}
-
-function calculateTranslateXForSpan(scrollPercent) {
-  // Domyślna pozycja X dla span (na początku przewijania strony)
-  let translateX = 0;
-
-  // Jeśli przewinięcie strony przekracza 50%, ustawić pozycję X dla span na -100px (na lewo)
-  if (scrollPercent >= 50) {
-    translateX = -100;
-  } else {
-    // Oblicz pozycję X dla span na podstawie procentowego przewinięcia strony
-    translateX = -100 * ((50 - scrollPercent) / 50); // Zmniejszamy przesunięcie w stosunku do procentu przewinięcia strony
-  }
-
-  return translateX;
-}
-
-// Nasłuchuj zdarzenie przewijania strony
-window.addEventListener('scroll', () => {
-  // Pobierz aktualną pozycję przewijania strony w dół
-  const scrollTop = window.scrollY || window.pageYOffset;
+const photos = ["grafika/transport1.png", "grafika/transport2.png", "grafika/transport3.png", "grafika/transport4.png", "grafika/transport5.png"]
+let counter = 0
 
 
-  // Oblicz procent przewinięcia strony w dół
-  const scrollHeight = window.innerHeight;
-  const scrollPercent = (scrollTop / scrollHeight) * 100;
-  console.log(scrollPercent)
-  // Oblicz pozycję docelową na osi X
-  const translateX = calculateTranslateX(scrollPercent);
-  ab.style.opacity = `${translateX}%`
-
-  // Ustaw styl transformacji dla elementu DIV
-  if(window.innerWidth>700){
-    ab.style.transform = `translateX(${translateX}px)`;
-    let x = translateX*2
-    under.style.transform = `translateX(-${x}px)`;
-  }
-  else{
-    ab.style.transform = `translateX(${translateX/5}px)`;
-    let x = translateX/4
-    under.style.transform = `translateX(-${x}px)`;
-  }
-
-
-  
-
-});
-document.addEventListener("scroll",()=>{
-  const scrollTop = window.scrollY;
-  if(window.scrollY>mainBox[0].clientHeight+aboutUs[0].clientHeight-200){
-    let innowacje = document.getElementsByClassName("innowacjeInfo")
-    let innowacje2 = document.getElementsByClassName("innoText")
-    let lista = document.getElementsByClassName("innoList")
-    innowacje[0].style.transition= `all 2s linear`;
-    innowacje[0].style.opacity = `100%`;
-    innowacje2[0].style.transition= `all 1s linear`;
-    innowacje2[0].style.opacity = `100%`;
-    lista[0].style.transition= `all 1s linear`;
-    lista[0].style.opacity = `100%`;
-
-  }
-})
-
-if(window.innerWidth>700){
-  document.addEventListener("scroll",()=>{
-    const scrollTop = window.scrollY;
-    setTimeout(()=>{
-      if(scrollTop<mainBox[0].clientHeight+anim[0].clientHeight+70)
-        anim[0].style.transform = `translateY(${scrollTop * 0.5}px)`;
-    },100)
-    setTimeout(()=>{
-      if(scrollTop<mainBox[0].clientHeight+anim[1].clientHeight+70)
-        anim[1].style.transform = `translateY(${scrollTop * 0.5}px)`;
-    },300)
-  })
-}else{
-  document.addEventListener("scroll",()=>{
-    const scrollTop = window.scrollY;
-    console.log(mainBox[0].clientHeight)
-  setTimeout(()=>{
-    if(scrollTop<mainBox[0].clientHeight+anim[0].clientHeight+50)
-      anim[0].style.transform = `translateY(${scrollTop * 0.5}px)`;
-  },100)
-  setTimeout(()=>{
-    if(scrollTop<mainBox[0].clientHeight+anim[1].clientHeight+50)
-      anim[1].style.transform = `translateY(${scrollTop * 0.5}px)`;
-  },300)
-  })
-}
-
-desc[0].addEventListener("click", ()=>{
-  let desc = document.getElementsByClassName("desc")
-  let inf = document.getElementsByClassName("inf")
-  let przed = document.getElementsByClassName("przed")
-
-  console.log("kliknieto")
-  desc[0].classList.toggle("descVis")
-  inf[0].classList.toggle("infVis")
-  przed[0].classList.toggle("przedVis")
-})
-
-desc[1].addEventListener("click", ()=>{
-  let desc = document.getElementsByClassName("desc")
-  let inf = document.getElementsByClassName("inf")
-  let przed = document.getElementsByClassName("przed")
-
-  desc[1].classList.toggle("descVis")
-  inf[1].classList.toggle("infVis")
-  przed[1].classList.toggle("przedVis")
-})
-
-
-let text = "oznaj nas lepiej.";
-let text2 = `PROGRAMISTYCZNO-ROBOTYCZNE`
-let animationInProgress = false;
-let animationTimeout;
-let animationInProgress2 = false;
-let animationTimeout2;
-
-
-function typeWriter(text, i) {
-    if (i < text.length && animationInProgress) {
-        element.innerHTML += text.charAt(i);
-        animationTimeout = setTimeout(function() {
-            typeWriter(text, i + 1);
-        }, 40);
-      }
-}
-
-function typeWriter2(text2, i) {
-  if (i < text2.length && animationInProgress2) {
-    if(i==15){
-      span.innerHTML+=`<span id="block">-</span>`
+function moveBackground(timestamp) {
+    if (!startTime) {
+        startTime = timestamp;
     }
-    else{
-      span.innerHTML += text2.charAt(i);
-    }
-    if(i==15 && window.innerWidth<600){
-      span.innerHTML+=`<br>`
-      //element.style.transform = "translateY(-50px)"
-    }
-      animationTimeout2 = setTimeout(function() {
-          typeWriter2(text2, i + 1);  
-      }, 60);
-    }
-    else{
-      animationTimeout2 = setTimeout(function(){
-        span.innerHTML = ""
-        typeWriter2(text2,0)
-      }, 1500)
-    }
-}
 
-setInterval(()=>{
-  if (!animationInProgress2) {
-    span.textContent = ""
-    animationInProgress2 = true;
-    typeWriter2(text2, 0);
-  }
-},4)
+    const progress = timestamp - startTime;
 
-
-    element.addEventListener('mouseover', function() {
-      element.textContent = "P"
-      if (!animationInProgress) {
-        animationInProgress = true;
-        typeWriter(text, 0);
-      }
-    });
-    element.addEventListener('click', function() {
-        element.textContent = "Po"
-        if (!animationInProgress) {
-          animationInProgress = true;
-          typeWriter(text, 0);
+    if (progress <= duration) {
+        const percentage = (progress / duration) * 100;
+        background[0].style.backgroundPosition = percentage + '% 0';
+        requestAnimationFrame(moveBackground);
+    } else {
+        startTime = null; // Zaczynamy od nowa
+        if(counter<photos.length-1){
+            background[0].style.backgroundImage = `url('${photos[counter+1]}')`; 
+            background[0].style.transition = "opacity 0.5s linear;"
+            counter++
         }
-      });
+        else{
+            counter = 0
+            background[0].style.backgroundImage = `url('${photos[counter]}')`; 
+            background[0].style.transition = "opacity 0.5s linear;"
+        }
+        requestAnimationFrame(moveBackground);
+    }
+}
 
-    element.addEventListener('mouseout', function() {
-      element.textContent = "Poznaj nas lepiej."
-      animationInProgress = false;
-      clearTimeout(animationTimeout);
-    });
+let list_item = document.getElementsByClassName("list-item")
+let box = document.getElementsByClassName("first")
+let sec1 = document.getElementsByClassName("second")
+let offer = document.getElementsByClassName("offer")
+let form = document.getElementsByClassName("form")
+let callN = document.getElementsByClassName("callN")
+
+list_item[0].addEventListener('click',()=>{
+    button[0].classList.remove("hamburger-active")
+    sidebar[0].classList.remove("list-active")
+    logo_pic.classList.remove("logo-active")
+})
+list_item[1].addEventListener('click',()=>{
+    button[0].classList.remove("hamburger-active")
+    sidebar[0].classList.remove("list-active")
+    logo_pic.classList.remove("logo-active")
+})
+list_item[2].addEventListener('click',()=>{
+    button[0].classList.remove("hamburger-active")
+    sidebar[0].classList.remove("list-active")
+    logo_pic.classList.remove("logo-active")
+})
+list_item[3].addEventListener('click',()=>{
+    button[0].classList.remove("hamburger-active")
+    sidebar[0].classList.remove("list-active")
+    logo_pic.classList.remove("logo-active")
+})
+
+document.addEventListener("scroll", (event) => {
+    if(window.scrollY<box[0].clientHeight){
+        for(let i=0;i<list_item.length;i++){
+            list_item[i].classList.remove("active-menu")
+        }
+        list_item[0].classList.add("active-menu")
+        callN[0].classList.remove("callN-noactive")
+    }
+    if(window.scrollY>box[0].clientHeight/3){
+        let boxy = document.getElementsByClassName("boxyJS")
+        let boxi = document.getElementsByClassName("boxI")
+        let boxh = document.getElementsByClassName("boxH")
+        let boxp = document.getElementsByClassName("boxP")
+        boxi[0].classList.add("boxes-show1")
+        boxi[1].classList.add("boxes-show2")
+        boxi[2].classList.add("boxes-show3")
+        boxh[0].classList.add("boxesH-show1")
+        boxh[1].classList.add("boxesH-show2")
+        boxh[2].classList.add("boxesH-show3")
+        boxp[0].classList.add("boxesP-show1")
+        boxp[1].classList.add("boxesP-show2")
+        boxp[2].classList.add("boxesP-show3")
+        callN[0].classList.remove("callN-noactive")
+    }
+    if(window.scrollY>box[0].clientHeight/2){
+        let h3offer = document.getElementsByClassName("offerh3")
+        h3offer[0].classList.add("h3offer-show")
+        let imgBox = document.getElementsByClassName("boxyJS")
+        imgBox[0].classList.add("boxes-show1I")
+        imgBox[1].classList.add("boxes-show2I")
+        imgBox[2].classList.add("boxes-show3I")
+        imgBox[3].classList.add("boxes-show4I")
+        callN[0].classList.remove("callN-noactive")
+    }
+    if(window.scrollY > box[0].clientHeight+sec1[0].clientHeight){
+        for(let i=0;i<list_item.length;i++){
+            list_item[i].classList.remove("active-menu")
+        }
+        list_item[1].classList.add("active-menu")
+        callN[0].classList.remove("callN-noactive")
+    }
+    if(window.scrollY > box[0].clientHeight+sec1[0].clientHeight+offer[0].clientHeight/2){
+        let wyc = document.getElementsByClassName("wycH")
+        wyc[0].classList.add("boxes-show1")
+        callN[0].classList.remove("callN-noactive")
+    }
+    if(window.scrollY >box[0].clientHeight+sec1[0].clientHeight+offer[0].clientHeight){
+        for(let i=0;i<list_item.length;i++){
+            list_item[i].classList.remove("active-menu")
+        }
+        list_item[2].classList.add("active-menu")
+        callN[0].classList.remove("callN-noactive")
+    }
+    if(window.scrollY >box[0].clientHeight+sec1[0].clientHeight+offer[0].clientHeight+form[0].clientHeight/2){
+        for(let i=0;i<list_item.length;i++){
+            list_item[i].classList.remove("active-menu")
+        }
+        list_item[3].classList.add("active-menu")
+        callN[0].classList.add("callN-noactive")
+    }
+
+});
+
+
+requestAnimationFrame(moveBackground);
+
+let trasa = document.getElementById("trasa")
+let telefon = document.getElementById("kontakt")
+let opis = document.getElementById("opis")
+let send = document.getElementsByClassName("form_button")
+
+send[0].addEventListener('click', ()=>{
+    if(trasa.value=="" || telefon.value=="" || opis.value==""){
+        console.log("Wypisz poprawne dane!")
+        alert("Sprawdź, czy podane pola są uzupełnione!");
+    }
+    else{
+        console.log("Formularz zostal wysłany!")
+        alert("Formularz zostal wysłany poprawnie!");
+        var formData = new FormData();
+        formData.append("trasa", trasa);
+        formData.append("telefon", telefon);
+        formData.append("opis", opis);
+
+        fetch("/submit_form", {
+            method: "POST",
+            body: formData
+        });
+
+    }
+})
