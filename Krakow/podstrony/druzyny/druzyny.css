@@ -1,0 +1,426 @@
+/*
+    font-family: "Reem Kufi Fun", sans-serif;
+    font-family: "Kanit", sans-serif;
+    font-family: "Roboto", sans-serif;
+
+
+zielony: #00ff37
+fiolety: #cf04bea8
+czarny: #0c0c0c
+rozbialy : #FFF7FC
+bialy: #F6F5F2
+*/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px;
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background: #cf04be;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #cf04be; 
+}
+.notka{
+    font-size: 25px;
+    text-align: left;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.second{
+    color: #b90aab;
+}
+.tr{
+    text-align: left;
+    align-items: center;
+}
+.tr>p{
+    font-size: 25px;
+    background-color: #33ff00;
+    color: #a10694;
+    padding: 2px 5px;
+    font-weight: bold;
+}
+.start{
+    display: block;
+    text-align: left;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.start>h3{
+    font-size: 3em;
+    display: inline-block;
+    background-color: #cf04be;
+    filter: drop-shadow(15px 15px 0px rgba(0, 21, 255, 0.534));
+}
+.start>p{
+    font-size: 25px;
+}
+.tr>ol>li{
+    font-size: 22px;
+    margin: 5px;
+}
+@media (min-width: 700px){
+    body{
+        margin: 0;
+        padding: 50px 0;
+        overflow-x: hidden;
+        width: 100vw;
+        height: 100vh;
+        background: rgb(15,15,15);
+        background: linear-gradient(45deg, rgba(15,15,15,1) 23%, rgba(12,12,12,1) 100%);
+        font-family: "Reem Kufi Fun", sans-serif;
+        color: #F6F5F2;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    h1{
+        font-size: 4vw;
+        display: inline-block;
+        background-color: #cf04be;
+        filter: drop-shadow(15px 15px 0px rgba(0, 21, 255, 0.534));
+    }
+    h1::before{
+        content: '';
+        width: 10%;
+        height: 2px;
+        background-color: #00ff37;
+        position: absolute;
+        top: 0px;
+        transform: skewY(-5deg) translateX(5px);
+        right: 0px;
+    }
+    h1::after{
+        content: '';
+        width: 15%;
+        transform: skewY(5deg)  translateX(-5px);
+        height: 2px;
+        background-color: #cf04be;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+    p{
+        letter-spacing: 2px;
+    }
+    .poz>a:hover{
+        color: #cf04be;
+        transition: all .5s linear;
+        background-image: repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 30px,
+            rgb(26, 25, 25) 30px,
+            rgb(26,26,26)60px
+        );
+    }
+    body>div{
+        display: flex;
+        justify-content: center;
+    }
+    .poz{
+        height: 60vh;
+    }
+    body>div>a{
+        display: inline-block;
+        width: 30%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        height: 60%;
+        transition: all .5s linear;
+        font-size: 5em;
+        color: #F6F5F2;
+        text-decoration: none;
+        margin: 20px;
+        background-color: transparent;
+        border: 2px solid #cf04be;
+    }
+    a>div{
+        width: 100%;
+        height: 100%;
+    }
+    a>div>h3{
+        font-size: 30px;
+        color: #00ff37;
+        filter: drop-shadow(2px 2px 0px #cf04be);
+    }
+    a>div>p{
+        font-size: 30px;
+    }
+    p>a:hover{
+        background-color: transparent;
+        color: #00ff37;
+    }
+    p>a{
+        color: #cf04be;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 25px;
+        padding: 15px;
+    }
+    a>div>ul{
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        width: 80%;
+    }
+    a>div>ul>li{
+
+        font-size: 20px;
+        text-align: left;
+    }
+    .sukcesy>div>div{
+        display: inline-block;
+        width: 30%;
+        height: 200px;
+        margin: 20px 5px;
+    }
+    #back:hover{
+        background-color: #a10694;
+        color: #00ff37;
+    }
+}
+.roboty>div>div:hover{
+    background-image: repeating-linear-gradient(
+        -45deg,
+        #cf04be,
+        #cf04be 30px,
+        #a10694 30px,
+        #a10694 60px
+      );
+      transition: all .5s linear;
+}
+.roboty>div>div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 30px 0px;
+    transition: all .3s linear;
+}
+.roboty>div>div>h4{
+    font-size: 35px;
+    display: inline-block;
+    background-color: #a10694;
+    padding: 2px 5px;
+    margin: 20px 50px 20px 20px;
+    filter: drop-shadow(5px 5px 0px #00ff37);
+}
+.roboty>h3{
+    font-size: 50px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.roboty>div>div>img{
+    width: 50vh;
+    display: block;
+}
+.roboty{
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+.roboty>div{
+    width: 100%;
+}
+@media (max-width: 700px){
+    .roboty>div>div>h4{
+        font-size: 25px;
+        display: inline-block;
+        background-color: #a10694;
+        padding: 2px 5px;
+        margin: 20px 20px 20px 20px;
+        filter: drop-shadow(5px 5px 0px #00ff37);
+    }
+    .roboty>h3{
+        font-size: 40px;
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .roboty>div>div>img{
+        width: 30vh;
+        display: block;
+    }
+    .roboty{
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    .roboty>div{
+        width: 100%;
+    }
+    .tr{
+        text-align: left;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    body{
+        margin: 0;
+        padding: 50px 0;
+        overflow-x: hidden;
+        width: 100vw;
+        background: rgb(15,15,15);
+        background: linear-gradient(45deg, rgba(15,15,15,1) 23%, rgba(12,12,12,1) 100%);
+        font-family: "Reem Kufi Fun", sans-serif;
+        color: #F6F5F2;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    h1{
+        font-size: 3em;
+        position: relative;
+        display: inline-block;
+    }
+    h1::before{
+        content: '';
+        width: 10%;
+        height: 2px;
+        background-color: #00ff37;
+        position: absolute;
+        top: 0px;
+        transform: skewY(-5deg) translateX(5px);
+        right: 0px;
+    }
+    h1::after{
+        content: '';
+        width: 15%;
+        transform: skewY(5deg)  translateX(-5px);
+        height: 2px;
+        background-color: #cf04be;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+    p{
+        letter-spacing: 2px;
+    }
+    .poz>a:hover{
+        color: #cf04be;
+        transition: all .5s linear;
+        background-image: repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 30px,
+            rgb(26, 25, 25) 30px,
+            rgb(26,26,26)60px
+        );
+    }
+    #back:hover{
+        background-color: #a10694;
+        color: #00ff37;
+    }
+    body>div>a{
+        display: block;
+        width: 85%;
+        padding-top: 5%;
+        padding-bottom: 8%;
+        height: 40vh;
+        transition: all .5s linear;
+        font-size: 5em;
+        color: #F6F5F2;
+        text-decoration: none;
+        margin: 20px 6%;
+        background-color: transparent;
+        border: 2px solid #cf04be;
+    }
+    a>div{
+        width: 100%;
+        height: 100%;
+    }
+    a>div>h3{
+        font-size: 30px;
+        color: #00ff37;
+        filter: drop-shadow(2px 2px 0px #cf04be);
+    }
+    a>div>p{
+        font-size: 25px;
+    }
+    p>a:hover{
+        background-color: transparent!important;
+        color: #00ff37;
+    }
+    p>a{
+        color: #cf04be;
+        text-decoration: none;
+        margin: 40px 0;
+        font-size: 25px;
+    }
+    a>div>ul{
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+        width: 80%;
+    }
+    a>div>ul>li{
+        font-size: 20px;
+        text-align: left;
+    }
+    .sukcesy>div>div{
+        display: inline-block;
+        width: 100%;
+        height: 200px;
+        margin: 20px 5px;
+    }
+}
+.op{
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.sukcesy>div>div>img{
+    width: 100%;
+}
+
+.sukcesy>h3{
+    font-size: 3em;
+    filter: drop-shadow(3px 3px 0px #a10694);
+}
+.sukcesy{
+    display: inline-block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-bottom: 50px
+}
+.robotyka{
+    display: inline-block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+.robotyka>h2{
+    font-size: 3em;
+}
+span{
+    color: #00ff37;
+}
+a>div>ul>li{
+    font-weight: bold;
+}
+.nagroda{
+    font-weight: bold;
+    color: #cf04be;
+}
+#back:hover{
+    background-color: #a10694;
+    color: #00ff37;
+}
+#back{
+    margin: 30px;
+    display: inline-block;
+    background-color: #00ff37;
+    font-weight: bold;
+    transition: all .3s linear;
+}

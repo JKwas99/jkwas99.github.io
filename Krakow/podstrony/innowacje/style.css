@@ -1,0 +1,166 @@
+body{
+    margin: 0;
+    padding: 20px 20%;
+    overflow-x: hidden!important;
+    width: 100%;
+    background: rgb(15,15,15);
+    background: linear-gradient(45deg, rgba(15,15,15,1) 23%, rgba(12,12,12,1) 100%);
+    font-family: "Reem Kufi Fun", sans-serif;
+    color: #F6F5F2;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 4vw;
+    display: inline-block;
+    background-color: #cf04be;
+    filter: drop-shadow(15px 15px 0px rgba(0, 21, 255, 0.534));
+}
+div>h2{
+    font-size: 2em;
+    filter: drop-shadow(2px 2px 0px rgba(0, 21, 255, 0.534));
+}
+div p{
+    font-size: 20px;
+}
+span{
+    color: #cf04be;
+}
+a{
+    display: inline-block;
+    color: #cf04be;
+    padding: 5px 20px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin: 20px 0px;
+    text-decoration: none;
+    filter: drop-shadow(5px 5px 0px #cf04be);
+    background-color: #00ff37;
+}
+a:hover{
+    background-color: rgba(0, 255, 55, 0.81);
+}
+.gr{
+    color: #00ff37;
+}
+.skills>h2{
+    display: inline-block;
+    text-align: center;
+    color: #F6F5F2;
+    padding: 5px 20px;
+    letter-spacing: 1px;
+    font-size: 25px;
+    margin: 40px 0px 20px 0;
+    text-decoration: none;
+    filter: drop-shadow(5px 5px 0px rgba(0, 21, 255, 0.534));
+    background-color: #cf04be;
+}
+.skills{
+    margin-bottom: 30px;
+}
+.skills>div>div{
+    margin: 5px;
+}
+.skills>div{
+    width: 100%;
+    display: flex;
+    align-items: top;
+    text-align: center;
+}
+.skills>div>div>h3{
+    color: #cf04be;
+    font-size: 30px;
+}
+.skills>div>div>ul{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.skills>div>div>ul>li{
+    font-size: 20px;
+    list-style-type: none;
+}
+.kariera{
+    display: block;
+    margin-bottom: 50px;
+}
+.kariera>h2{
+    display: inline-block;
+    text-align: center;
+    color: #F6F5F2;
+    padding: 5px 20px;
+    letter-spacing: 1px;
+    font-size: 25px;
+    margin: 40px 0px 30px 0;
+    text-decoration: none;
+    filter: drop-shadow(5px 5px 0px rgba(0, 21, 255, 0.534));
+    background-color: #cf04be;
+}
+.kariera>div>ol{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+ol>li{
+    font-size: 22px;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px;
+    background: black;
+}
+::-webkit-scrollbar-thumb {
+    background: #cf04be;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #cf04be; 
+}
+ol>li{
+    color: #00ff37;
+}
+ol>li>span{
+    color: #F6F5F2;
+}
+ul>li{
+    color: #00ff37;
+}
+ul>li>span{
+    color: #F6F5F2;
+}
+.image{
+    position: fixed;
+    z-index: -1;
+    right: 0%;
+    color: #414040a1;
+    top: -30px;
+    font-size: 100vh;
+}
+@media (max-width: 700px){
+    .skills>div{
+        display: inline-block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    h1{
+        font-size: 3em;
+        display: inline-block;
+        background-color: #cf04be;
+        filter: drop-shadow(15px 15px 0px rgba(0, 21, 255, 0.534));
+    }
+    
+    body{
+        margin: 0;
+        padding: 20px 10%;
+    }
+    .image{
+        position: fixed;
+        z-index: -1;
+        right: 0%;
+        color: #414040a1;
+        bottom: -20px;
+        font-size: 40vh;
+    }
+}
