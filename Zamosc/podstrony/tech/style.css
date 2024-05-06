@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+    padding: 20px 10%;
+    overflow-x: hidden!important;
+    width: 100%;
+    background: rgb(15,15,15);
+    background: linear-gradient(45deg, rgba(15,15,15,1) 23%, rgba(12,12,12,1) 100%);
+    font-family: "Reem Kufi Fun", sans-serif;
+    color: #F6F5F2;
+    box-sizing: border-box;
+}
+h1{
+    font-size: 3em;
+    display: inline-block;
+    background-color: #cf04be;
+    filter: drop-shadow(15px 15px 0px rgba(0, 21, 255, 0.534));
+}
+li::before{
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-color: #00ff37;
+    position: absolute;
+    left: -30px;
+    top: 7px;
+}
+li{
+    font-size: 22px;
+    position: relative;
+    list-style-type: none;
+}
+body>div>p{
+    font-size: 30px;
+    display: inline-block;
+    padding: 2px 5px;
+    color: #cf04be;
+    font-weight: bold;
+    filter: drop-shadow(1px 2px 0px #00ff37);
+}
+body>div>div{
+    display: flex;
+    align-items: center;
+}
+body>div>div>p{
+    margin: 20px;
+    font-size: 22px;
+    color: aqua;
+}
